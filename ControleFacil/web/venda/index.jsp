@@ -13,7 +13,7 @@
     </head>
     <body>
         <%@include file= "../menu.jsp" %>
-        <h3>Vendas</h3>
+        <h3>VENDAS</h3>
         
         <input value="Novo Cliente" type="button" ><br/><br/>
         
