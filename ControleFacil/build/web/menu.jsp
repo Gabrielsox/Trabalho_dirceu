@@ -1,4 +1,4 @@
-<h1>Controle Facil</h1>
+<h1>CONTROLE FÁCIL</h1>
 <a href="/">Home</a>|
 <a href="/cliente">Cliente</a>|
 <a href="/fornecedor">Fornecedor</a>|

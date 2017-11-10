@@ -21,7 +21,7 @@ public class TOUnidade {
         
         
     }
-
+    public TOUnidade(){}
     /**
      * @return the id
      */
