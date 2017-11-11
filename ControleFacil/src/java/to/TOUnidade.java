@@ -17,11 +17,12 @@ public class TOUnidade {
     
     public TOUnidade(ResultSet rs) throws Exception {
         this.id = rs.getInt("id");
-        this.nomeUnidade = rs.getString("nome");
+        this.nomeUnidade = rs.getString("nomeUnidade");
         
         
     }
     public TOUnidade(){}
+
     /**
      * @return the id
      */
@@ -49,4 +50,4 @@ public class TOUnidade {
     public void setNomeUnidade(String nomeUnidade) {
         this.nomeUnidade = nomeUnidade;
     }
-}
+} 

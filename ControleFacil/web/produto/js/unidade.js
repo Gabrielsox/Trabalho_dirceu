@@ -1,32 +1,27 @@
-Index = function () {
+Unidade = function () {
 
 };
 
-Index.Load = function () {
-    var index = new Index();
+Unidade.Load = function () {
+    var index = new Unidade();
     index.initialize();
     return index;
 };
 
-Index.prototype = {
+Unidade.prototype = {
     initialize: function () {
 
         $('#btnSalvar').bind('click', '', $.createDelegate(this, this._salvarClick));
-        $('#btnNovoUnidade').bind('click', '', $.createDelegate(this, this._novoUnidadeClick));
 
         this._obterUsuarios();
     },
-    _novoUnidadeClick: function () {
-        
-       location.href="unidade.jsp"; 
-    },
     _obterUsuarios: function () {
         
-        debugger;
+        
         this.dataBind(
                 'GET',
                 '',
-                '/api/cliente',
+                '/api/unidade',
                 this._obterUsuariosSuccess,
                 this._obterUsuariosError);
     },
@@ -37,11 +32,7 @@ Index.prototype = {
 
         var tabela = '<tr>';
         tabela += '<td>Id</td>';
-        tabela += '<td>Nome</td>';
-        tabela += '<td>E-mail</td>';
-        tabela += '<td>Endereço</td>';
-        tabela += '<td>Telefone</td>';
-        tabela += '<td>Observação</td>';
+        tabela += '<td>Nome unidade</td>';      
         tabela += '<td>-</td>';
         tabela += '</tr>';
 
@@ -54,20 +45,8 @@ Index.prototype = {
             tabela += value[i].id;
             tabela += '</td>';
             tabela += '<td>';
-            tabela += value[i].nome;
-            tabela += '</td>';
-            tabela += '<td>';
-            tabela += value[i].email;
-            tabela += '</td>';
-            tabela += '<td>';
-            tabela += value[i].endereco;
-            tabela += '</td>';
-            tabela += '<td>';
-            tabela += value[i].telefone;
-            tabela += '</td>';
-            tabela += '<td>';
-            tabela += value[i].observacao;
-            tabela += '</td>';
+            tabela += value[i].nomeUnidade;
+            tabela += '</td>';                     
             tabela += '<td><input type="button" id="btnExcluir' + value[i].id + '" value="Excluir"/>';
             tabela += '<input type="button" id="btnAlterar' + value[i].id + '" value="Alterar"/></td>';
             tabela += '</tr>';
@@ -92,19 +71,14 @@ Index.prototype = {
     _alterarClick: function (value) {
 
         this.dataBind('GET', null,
-                '/api/cliente/' + value.data.id,
+                '/api/unidade/' + value.data.id,
                 this._alterarClickSuccess,
                 this._alterarClickError);
 
     },
     _alterarClickSuccess: function (value) {
         $('#id').val(value.id);
-        $('#nome').val(value.nome);
-        $('#email').val(value.email);
-        $('#endereco').val(value.endereco);
-        $('#telefone').val(value.telefone);
-        $('#observacao').val(value.observacao);
-        
+        $('#nomeUnidade').val(value.nome);
         
     },
     _alterarClickError: function (value) {
@@ -116,7 +90,7 @@ Index.prototype = {
         this.dataBind(
                 'DELETE',
                 '',
-                '/api/cliente/' + value.data.id,
+                '/api/unidade/' + value.data.id,
                 this._obterUsuarios,
                 this._obterUsuariosError);
 
@@ -126,11 +100,8 @@ Index.prototype = {
 
         var data = {
             id: $('#id').val(),
-            nome: $('#nome').val(),
-            email: $('#email').val(),
-            endereco: $('#endereco').val(),
-            telefone: $('#telefone').val(),
-            observacao: $('#observacao').val()
+            nome: $('#nomeUnidade').val()
+           
         };
 
         // atenção que esta estrutura em javascript precisa respeitar a mesma estrutura
@@ -147,7 +118,7 @@ Index.prototype = {
             this.dataBind(
                     'POST',
                     datastr,
-                    '/api/cliente',
+                    '/api/unidade',
                     this._salvaClickSuccess,
                     this._salvaClickError);
 
@@ -156,7 +127,7 @@ Index.prototype = {
             this.dataBind(
                     'PUT',
                     datastr,
-                    '/api/cliente',
+                    '/api/unidade',
                     this._salvaClickSuccess,
                     this._salvaClickError);
 
@@ -166,11 +137,8 @@ Index.prototype = {
     _salvaClickSuccess: function (value) {
         
         $('#id').val('');
-        $('#nome').val('');
-        $('#email').val('');
-        $('#endereco').val('');
-        $('#telefone').val('');
-        $('#observacao').val('');
+        $('#nomeUnidade').val('');
+        
         
         this._obterUsuarios();
 
@@ -195,5 +163,5 @@ Index.prototype = {
 };
 
 $(document).ready(function () {
-    Index.Load();
+    Unidade.Load();
 });

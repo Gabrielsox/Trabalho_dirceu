@@ -21,7 +21,7 @@ public class DAOUnidade {
     
     public static void inserir(Connection c, TOUnidade t) throws Exception {
         StringBuilder sql = new StringBuilder();
-        sql.append(" insert into unidadeMedida (nomeUnidade) ");
+        sql.append(" insert into unidadeMedida(nomeUnidade) ");
         sql.append(" values (?) ");
 
         Data.executeUpdate(c, sql.toString(),

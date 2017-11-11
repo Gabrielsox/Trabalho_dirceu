@@ -12,8 +12,13 @@ Index.prototype = {
     initialize: function () {
 
         $('#btnSalvar').bind('click', '', $.createDelegate(this, this._salvarClick));
+        $('#btnNovoUnidade').bind('click', '', $.createDelegate(this, this._novoUnidadeClick));
 
         this._obterUsuarios();
+    },
+    _novoUnidadeClick: function () {
+        
+       location.href="unidade.jsp"; 
     },
     _obterUsuarios: function () {
         
