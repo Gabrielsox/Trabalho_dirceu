@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 28/10/2017, 15:25:45
+    Document   : categoria
+    Created on : 11/11/2017, 16:05:47
     Author     : gabri
 --%>
 
@@ -17,42 +17,28 @@
         </style>
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="../js/jsutil.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/categoria.js"></script>
     </head>
     <body>
         <%@include file= "../menu.jsp" %>
-        
         <section>
             <div id="conteudo-left">
-                <h3>Cadastro fornecedor</h3>
+                <h3>Cadastro categoria</h3>
 
                 <input id="id" type="hidden"/>
 
-                Nome<br/>
-                <input id="nomeFornecedor" type="text"/><br/>
-                Cnpj<br/>
-                <input id="cnpj" type="text"/><br/>
-                E-mail<br/>
-                <input id="email" type="text"/><br/>
-                Endereço<br/>
-                <input id="endereco" type="text"/><br/>
-                Telefone<br/>
-                <input id="telefone" type="text"/><br/>
-                Observação<br/>
-                <input id="observacao" type="text"/><br/><br/>
+                Nome categotia<br/>
+                <input id="nomeCategoria" type="text"/><br/>
+               <br/>
 
-                               
                 <input id="btnSalvar" type="button" value="Salvar"/>
             </div>
             <div id="conteudo-right">
-                <h3>lista de Fornecedores</h3><br/>
+                <h3>lista de Categoria</h3><br/>
                 <table id="tabela" border="1"></table>
             </div>
 
         </section>
 
-        
-        
-        
     </body>
 </html>

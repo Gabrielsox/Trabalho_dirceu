@@ -13,8 +13,18 @@ Index.prototype = {
 
         $('#btnSalvar').bind('click', '', $.createDelegate(this, this._salvarClick));
         $('#btnNovoUnidade').bind('click', '', $.createDelegate(this, this._novoUnidadeClick));
+        $('#btnNovoFornecedor').bind('click', '', $.createDelegate(this, this._novoFornecedorClick));
+        $('#btnNovoCategoria').bind('click', '', $.createDelegate(this, this._novoCategoriaClick));
 
         this._obterUsuarios();
+    },
+    _novoCategoriaClick: function () {
+        
+       location.href="categoria.jsp"; 
+    },
+    _novoFornecedorClick: function () {
+        
+       location.href="/fornecedor/index.jsp"; 
     },
     _novoUnidadeClick: function () {
         

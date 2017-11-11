@@ -12,15 +12,16 @@ import java.sql.ResultSet;
  * @author gabri
  */
 public class TOCategoria {
+
     private int id;
     private String nomeCategoria;
-    
+
     public TOCategoria(ResultSet rs) throws Exception {
         this.id = rs.getInt("id");
-        this.nomeCategoria = rs.getString("nome");
-        
-        
+        this.nomeCategoria = rs.getString("nomeCategoria");
     }
+
+    public TOCategoria(){}
 
     /**
      * @return the id
@@ -49,5 +50,11 @@ public class TOCategoria {
     public void setNomeCategoria(String nomeCategoria) {
         this.nomeCategoria = nomeCategoria;
     }
+    
+    
+    
+    
+    
+    
     
 }

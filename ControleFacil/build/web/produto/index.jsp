@@ -24,7 +24,7 @@
         <%@include file= "../menu.jsp" %>
         <section>
             <div id="conteudo-left">
-                <h3>Cadastro</h3>
+                <h3>Cadastro Produto</h3>
 
                 <input id="id" type="hidden"/>
 
