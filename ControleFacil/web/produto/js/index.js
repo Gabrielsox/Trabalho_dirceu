@@ -18,6 +18,7 @@ Index.prototype = {
          
          
         this._obterSelectUnidade();
+        this._obterSelectCategoria();
     },
     _novoCategoriaClick: function () {
         
@@ -63,9 +64,47 @@ Index.prototype = {
     },
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    _obterSelectCategoria: function () {
+        
+        this.dataBind(
+                'GET',null,
+                '/api/categoria',
+                this._obterSelectCategoriaSuccess,
+                this._obterSelectCategoriaError);
+    },
 
     
+    _obterSelectCategoriaSuccess: function (value) {
+            
+            
+        $('#selectCategoria').html('');
+        var select = '<option value"">selecione uma categoria</option>';
+        
+        $('#selectCategoria').append(select);
+                
+        for (var i = 0; i < value.length; i++) {
+            
+            
+            select = '<option value="' + [i].id + '">' +value[i].nomeCategoria + '</option>';
+
+            $('#selectCategoria').append(select);
+
+           
+        }
+    },
     
+    _obterSelectCategoriaError: function () {
+        alert('Ops... algo deu errado. Tente novamente.');
+    },
     
     
     

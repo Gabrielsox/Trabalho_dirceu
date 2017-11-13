@@ -25,16 +25,11 @@ public class DAOCategoria {
         sql.append(" values (?) ");
 
         
-        try {
+        
             Data.executeUpdate(c, sql.toString(),
             t.getNomeCategoria());
-        } catch (Exception e) {
-          System.out.println(e);
-        }
         
-    
-
-    
+        
     }
 
     public static void excluir(Connection c, int id) throws Exception {

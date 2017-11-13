@@ -31,13 +31,13 @@
                 Nome<br/>
                 <input id="nomeProduto" type="text"/><br/>
                 Fornecedor<br/> 
-                <select class="basic"> 
-                    <option id="selectFornecedor" ></option>
+                <select id="selectFornecedor" class="basic"> 
+                   
                     
                 </select> <input id="btnNovoFornecedor" type="button" value="+"/><br/>
                 Categoria<br/>
-                <select class="basic">
-                    <option id="selectCategoria" ></option>
+                <select id="selectCategoria" class="basic">
+                   
                     
                 </select> <input id="btnNovoCategoria" type="button" value="+"/><br/>
                 Unidade medida<br/>
