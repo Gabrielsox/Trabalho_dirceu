@@ -78,7 +78,7 @@ Categoria.prototype = {
     },
     _alterarClickSuccess: function (value) {
         $('#id').val(value.id);
-        $('#nomeCategoria').val(value.nome);
+        $('#nomeCategoria').val(value.nomeCategoria);
         
     },
     _alterarClickError: function (value) {
@@ -100,7 +100,7 @@ Categoria.prototype = {
 
         var data = {
             id: $('#id').val(),
-            nome: $('#nomeCategoria').val()
+            nomeCategoria: $('#nomeCategoria').val()
             
         };
 

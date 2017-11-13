@@ -10,21 +10,31 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.control.Alert;
 import to.TOCategoria;
-
 
 /**
  *
  * @author gabri
  */
 public class DAOCategoria {
+
     public static void inserir(Connection c, TOCategoria t) throws Exception {
         StringBuilder sql = new StringBuilder();
         sql.append(" insert into categoria (nomeCategoria) ");
         sql.append(" values (?) ");
 
-        Data.executeUpdate(c, sql.toString(),
-                t.getNomeCategoria());
+        
+        try {
+            Data.executeUpdate(c, sql.toString(),
+            t.getNomeCategoria());
+        } catch (Exception e) {
+          System.out.println(e);
+        }
+        
+    
+
+    
     }
 
     public static void excluir(Connection c, int id) throws Exception {
@@ -58,8 +68,8 @@ public class DAOCategoria {
         sql.append(" set nomeCategoria = ? ");
         sql.append(" where id = ? ");
 
-        Data.executeUpdate(c, sql.toString(),           
-                t.getNomeCategoria(),t.getId());
+        Data.executeUpdate(c, sql.toString(),
+                t.getNomeCategoria(), t.getId());
     }
 
     public static List<TOCategoria> lista(Connection c, String filtro) throws Exception {

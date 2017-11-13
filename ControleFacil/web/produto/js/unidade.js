@@ -78,7 +78,7 @@ Unidade.prototype = {
     },
     _alterarClickSuccess: function (value) {
         $('#id').val(value.id);
-        $('#nomeUnidade').val(value.nome);
+        $('#nomeUnidade').val(value.nomeUnidade);
         
     },
     _alterarClickError: function (value) {
@@ -100,7 +100,7 @@ Unidade.prototype = {
 
         var data = {
             id: $('#id').val(),
-            nome: $('#nomeUnidade').val()
+            nomeUnidade: $('#nomeUnidade').val()
            
         };
 

@@ -32,18 +32,18 @@
                 <input id="nomeProduto" type="text"/><br/>
                 Fornecedor<br/> 
                 <select class="basic"> 
-                    <option value="" ></option>
-                    <option value="" >teste</option>
+                    <option id="selectFornecedor" ></option>
+                    
                 </select> <input id="btnNovoFornecedor" type="button" value="+"/><br/>
                 Categoria<br/>
                 <select class="basic">
-                    <option value="" ></option>
-                    <option value="" >teste</option>
+                    <option id="selectCategoria" ></option>
+                    
                 </select> <input id="btnNovoCategoria" type="button" value="+"/><br/>
                 Unidade medida<br/>
-                <select class="basic">
-                    <option value="" ></option>
-                    <option value="" >teste</option>
+                <select id="selectUnidade" class="basic">
+                    
+                    
                 </select> <input id="btnNovoUnidade" type="button" value="+"/><br/>
                 Quantidade atual <br/>
                 <input id="qtd_atual" type="text"/><br/>
