@@ -19,6 +19,7 @@ Index.prototype = {
          
         this._obterSelectUnidade();
         this._obterSelectCategoria();
+        this._obterSelectFornecedor();
     },
     _novoCategoriaClick: function () {
         
@@ -113,6 +114,42 @@ Index.prototype = {
     
     
     
+    
+    
+    
+    
+    _obterSelectFornecedor: function () {
+        
+        this.dataBind(
+                'GET',null,
+                '/api/fornecedor',
+                this._obterSelectFornecedorSuccess,
+                this._obterSelectFornecedorError);
+    },
+
+    
+    _obterSelectFornecedorSuccess: function (value) {
+            
+            
+        $('#selectFornecedor').html('');
+        var select = '<option value"">selecione uma fornecedor</option>';
+        
+        $('#selectFornecedor').append(select);
+                
+        for (var i = 0; i < value.length; i++) {
+            
+            
+            select = '<option value="' + [i].id + '">' +value[i].nomeFornecedor + '</option>';
+
+            $('#selectFornecedor').append(select);
+
+           
+        }
+    },
+    
+    _obterSelectFornecedorError: function () {
+        alert('Ops... algo deu errado. Tente novamente.');
+    },
     
     
     
