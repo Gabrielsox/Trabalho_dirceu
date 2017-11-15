@@ -48,9 +48,4 @@ public class BOProduto {
         }
     }
     
-    public static TOProduto obterUnidade(int id) throws Exception {
-        try (Connection c = Data.openConnection()) {
-            return DAOProduto.obterUnidade(c, id);
-        }
-    }
 }

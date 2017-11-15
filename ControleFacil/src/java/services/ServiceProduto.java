@@ -66,7 +66,7 @@ public class ServiceProduto {
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public TOProduto obterUnidade(@PathParam("id") int id) throws Exception {
-        return BOProduto.obterUnidade(id);
+        return BOProduto.obter(id);
     }
 
     @DELETE

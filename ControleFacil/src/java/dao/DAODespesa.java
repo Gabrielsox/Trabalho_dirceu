@@ -21,7 +21,7 @@ public class DAODespesa {
     public static void inserir(Connection c, TODespesa t) throws Exception {
         StringBuilder sql = new StringBuilder();
         sql.append(" insert into despesa (descricao, dataDespesa, valor, observacao) ");
-        sql.append(" values (?, now(), ?, ? ) ");
+        sql.append(" values (?, ?, ?, ? ) ");
 
         Data.executeUpdate(c, sql.toString(),
                 t.getDescricao(), t.getDataDespesa(), t.getValor(), t.getObservacao());
@@ -57,17 +57,16 @@ public class DAODespesa {
         sql.append(" update despesa ");
         sql.append(" set descricao = ?, dataDespesa = ?, valor = ?, observacao = ? ");
         sql.append(" where id = ? ");
-
-        Data.executeUpdate(c, sql.toString(),
-                Data.executeUpdate(c, sql.toString(),
-                        t.getDescricao(), t.getDataDespesa(), t.getValor(), t.getObservacao()));
+        //t.getDescricao(), t.getDataDespesa(), t.getValor(), t.getObservacao(),t.getId()
+        Data.executeUpdate(c, sql.toString(),           
+                t.getDescricao(), t.getDataDespesa(), t.getValor(), t.getObservacao(),t.getId());
     }
 
     public static List<TODespesa> lista(Connection c, String filtro) throws Exception {
         StringBuilder sql = new StringBuilder();
         sql.append(" select id, descricao, dataDespesa, valor, observacao from despesa ");
         sql.append(" order by descricao ");
-
+        //date_format(dataDespesa,'%d/%m/%Y')
         List<TODespesa> l = new ArrayList<>();
 
         try (ResultSet rs = Data.executeQuery(c, sql.toString())) {

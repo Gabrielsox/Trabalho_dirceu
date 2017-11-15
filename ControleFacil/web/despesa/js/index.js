@@ -20,7 +20,7 @@ Index.prototype = {
         this.dataBind(
                 'GET',
                 '',
-                '/api/despesa',
+                '/api/despesa/',
                 this._obterUsuariosSuccess,
                 this._obterUsuariosError);
     },
@@ -33,7 +33,7 @@ Index.prototype = {
         tabela += '<td>Id</td>';
         tabela += '<td>Descrição</td>';
         tabela += '<td>Data</td>';
-        tabela += '<td>Valor</td>';
+        tabela += '<td>Valor R$</td>';
         tabela += '<td>Observação</td>';
         tabela += '<td>-</td>';
         tabela += '</tr>';
@@ -50,7 +50,7 @@ Index.prototype = {
             tabela += value[i].descricao;
             tabela += '</td>';
             tabela += '<td>';
-            tabela += value[i].data;
+            tabela += value[i].dataDespesa;
             tabela += '</td>';
             tabela += '<td>';
             tabela += value[i].valor;
@@ -77,7 +77,7 @@ Index.prototype = {
     _alterarClick: function (value) {
 
         this.dataBind('GET', null,
-                'api/despesa/' + value.data.id,
+                '/api/despesa/' + value.data.id,
                 this._alterarClickSuccess,
                 this._alterarClickError);
 
@@ -85,7 +85,7 @@ Index.prototype = {
     _alterarClickSuccess: function (value) {
         $('#id').val(value.id);
         $('#descricao').val(value.descricao);
-        $('#data').val(value.data);
+        $('#dataDespesa').val(value.dataDespesa);
         $('#valor').val(value.valor);
         $('#observacao').val(value.observacao);
     },
@@ -105,12 +105,35 @@ Index.prototype = {
     _obterUsuariosError: function () {
         alert('Ops... algo deu errado. Tente novamente.');
     },
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     _salvarClick: function () {
 
         var data = {
             id: $('#id').val(),
             descricao: $('#descricao').val(),
-            data: $('#data').val(),
+            dataDespesa: $('#dataDespesa').val(),
             valor: $('#valor').val(),
             observacao: $('#observacao').val()
         };
@@ -149,7 +172,7 @@ Index.prototype = {
 
         $('#id').val('');
         $('#descricao').val('');
-        $('#data').val('');
+        $('#dataDespesa').val('');
         $('#valor').val('');
         $('#observacao').val('');
 

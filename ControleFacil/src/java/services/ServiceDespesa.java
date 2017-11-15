@@ -28,7 +28,7 @@ import to.TORetorno;
  *
  * @author usuario
  */
-@Path("depesa")
+@Path("despesa")
 public class ServiceDespesa {
 
     @Context
