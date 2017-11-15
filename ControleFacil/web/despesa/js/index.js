@@ -107,27 +107,6 @@ Index.prototype = {
     },
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     _salvarClick: function () {
 
         var data = {
