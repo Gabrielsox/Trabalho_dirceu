@@ -47,16 +47,16 @@ Index.prototype = {
     _obterSelectUnidadeSuccess: function (value) {
 
 
-        $('#selectUnidade').html('');
+        $('#unidadeMedida_idUnidadeMedida').html('');
         var select = '<option value"">selecione uma unidade</option>';
 
-        $('#selectUnidade').append(select);
+        $('#unidadeMedida_idUnidadeMedida').append(select);
 
         for (var i = 0; i < value.length; i++) {
 
             select = '<option value="' + [i].id + '">' + value[i].nomeUnidade + '</option>';
 
-            $('#selectUnidade').append(select);
+            $('#unidadeMedida_idUnidadeMedida').append(select);
 
         }
     },
@@ -77,17 +77,17 @@ Index.prototype = {
     _obterSelectCategoriaSuccess: function (value) {
 
 
-        $('#selectCategoria').html('');
+        $('#categoria_idCategoria').html('');
         var select = '<option value"">selecione uma categoria</option>';
 
-        $('#selectCategoria').append(select);
+        $('#categoria_idCategoria').append(select);
 
         for (var i = 0; i < value.length; i++) {
 
 
             select = '<option value="' + [i].id + '">' + value[i].nomeCategoria + '</option>';
 
-            $('#selectCategoria').append(select);
+            $('#categoria_idCategoria').append(select);
 
 
         }
@@ -109,17 +109,17 @@ Index.prototype = {
     _obterSelectFornecedorSuccess: function (value) {
 
 
-        $('#selectFornecedor').html('');
+        $('#fornecedor_idFornecedor').html('');
         var select = '<option value"">selecione uma fornecedor</option>';
 
-        $('#selectFornecedor').append(select);
+        $('#fornecedor_idFornecedor').append(select);
 
         for (var i = 0; i < value.length; i++) {
 
 
             select = '<option value="' + [i].id + '">' + value[i].nomeFornecedor + '</option>';
 
-            $('#selectFornecedor').append(select);
+            $('#fornecedor_idFornecedor').append(select);
 
 
         }
@@ -131,7 +131,7 @@ Index.prototype = {
 
     _obterProdutos: function () {
 
-        debugger;
+        
         this.dataBind(
                 'GET',
                 '',
@@ -188,7 +188,7 @@ Index.prototype = {
             tabela += value[i].valorCusto;
             tabela += '</td>';
             tabela += '<td>';
-            tabela += value[i].ValorVenda;
+            tabela += value[i].valorVenda;
             tabela += '</td>';
             tabela += '<td>';
             tabela += value[i].observacao;
@@ -198,7 +198,7 @@ Index.prototype = {
             tabela += '</tr>';
 
             $('#tabela').append(tabela);
-
+            
             // criando um objeto item para passar como parâmetro no método de exclusão
 
             var item = {
@@ -227,11 +227,11 @@ Index.prototype = {
         $('#nomeProduto').val(value.nomeProduto);
         $('#fornecedor_idFornecedor').val(value.fornecedor_idFornecedor);
         $('#categoria_idCategoria').val(value.categoria_idCategoria);
-        $('#unidadeMedida_idUnidadeMedida').val(value.unidadeMedida_idUnidadeMedida);
+        $('#selectUnidade').val(value.unidadeMedida_idUnidadeMedida);
         $('#qtdAtual').val(value.qtdAtual);
         $('#qtdMinima').val(value.qtdMinima);
         $('#valorCusto').val(value.valorCusto);
-        $('#ValorVenda').val(value.ValorVenda);
+        $('#valorVenda').val(value.valorVenda);
         $('#observacao').val(value.observacao);
 
 
@@ -262,7 +262,7 @@ Index.prototype = {
             qtdAtual: $('#qtdAtual').val(),
             qtdMinima: $('#qtdMinima').val(),
             valorCusto: $('#valorCusto').val(),
-            ValorVenda: $('#ValorVenda').val(),
+            valorVenda: $('#valorVenda').val(),
             observacao: $('#observacao').val()
         };
 
@@ -306,10 +306,10 @@ Index.prototype = {
         $('#qtdAtual').val('');
         $('#qtdMinima').val('');
         $('#valorCusto').val('');
-        $('#ValorVenda').val('');
+        $('#valorVenda').val('');
         $('#observacao').val('');
 
-        this._obterUsuarios();
+        this._obterProdutos();
 
     },
     _salvaClickError: function (value) {

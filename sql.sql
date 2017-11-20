@@ -53,6 +53,24 @@ FOREIGN KEY (unidadeMedida_idUnidadeMedida) REFERENCES unidadeMedida(id)
 
 );
 
+insert into produto values(1,"capacete",3,6,3,20,10,200,220,"azul tamanho 48");
+select * from produto;
+
+SELECT id, nomeProduto, nomeFornecedor , nomeCategoria c,nomeUnidade, qtdAtual, qtdMinima, valorCusto, ValorVenda, observacao 
+FROM produto p, fornecedor f, categoria c, unidadeMedida u
+WHERE p.id = f.id 
+and f.id = c.id
+and c.id = u.id
+
+
+
+
+
+
+
+
+
+
 create table despesa (
 id int auto_increment,
 descricao varchar(25) not null,
@@ -61,6 +79,8 @@ valor double not null,
 observacao varchar(100),
 constraint pk_categoria primary key (id)
 );
+
+
 
 
 create table formaPagamento (
@@ -95,4 +115,8 @@ FOREIGN KEY (produto_idProduto) REFERENCES produto(id)
 
 );
 
+select id, nome, email, endereco, telefone,observacao from cliente
+order by nome;
 
+
+select * from cliente;

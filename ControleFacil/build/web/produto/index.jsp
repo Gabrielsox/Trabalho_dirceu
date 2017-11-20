@@ -31,28 +31,28 @@
                 Nome<br/>
                 <input id="nomeProduto" type="text"/><br/>
                 Fornecedor<br/> 
-                <select id="selectFornecedor" class="basic"> 
+                <select id="fornecedor_idFornecedor" class="basic"> 
                    
                     
                 </select> <input id="btnNovoFornecedor" type="button" value="+"/><br/>
                 Categoria<br/>
-                <select id="selectCategoria" class="basic">
+                <select id="categoria_idCategoria" class="basic">
                    
                     
                 </select> <input id="btnNovoCategoria" type="button" value="+"/><br/>
                 Unidade medida<br/>
-                <select id="selectUnidade" class="basic">
+                <select id="unidadeMedida_idUnidadeMedida" class="basic">
                     
                     
                 </select> <input id="btnNovoUnidade" type="button" value="+"/><br/>
                 Quantidade atual <br/>
-                <input id="qtd_atual" type="text"/><br/>
+                <input id="qtdAtual" type="text"/><br/>
                 Quantidade minima <br/>
-                <input id="qtd_minima" type="text"/><br/>
+                <input id="qtdMinima" type="text"/><br/>
                 Valorde custo<br/>
-                <input id="valor_custo" type="text"/><br/>
+                <input id="valorCusto" type="text"/><br/>
                 Valor de venda<br/>
-                <input id="valor_venda" type="text"/><br/>
+                <input id="valorVenda" type="text"/><br/>
                 Observação<br/>
                 <input id="observacao" type="text"/><br/><br/>
 

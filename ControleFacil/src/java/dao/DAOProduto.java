@@ -21,7 +21,7 @@ public class DAOProduto {
     public static void inserir(Connection c, TOProduto t) throws Exception {
         StringBuilder sql = new StringBuilder();
         sql.append(" insert into produto (nomeProduto, fornecedor_idFornecedor, categoria_idCategoria,"
-                + " unidadeMedida_idUnidadeMedida,qtdAtual,qtdMinima,valorCusto,ValorVenda,observacao) ");
+                + " unidadeMedida_idUnidadeMedida,qtdAtual,qtdMinima,valorCusto,valorVenda,observacao) ");
         sql.append(" values (?, ?, ?, ?, ?, ?, ?, ?, ?) ");
 
         Data.executeUpdate(c, sql.toString(),
@@ -41,7 +41,7 @@ public class DAOProduto {
     public static TOProduto obter(Connection c, int id) throws Exception {
         StringBuilder sql = new StringBuilder();
         sql.append(" select id, nomeProduto, fornecedor_idFornecedor, categoria_idCategoria,"
-                + " unidadeMedida_idUnidadeMedida,qtdAtual,qtdMinima,valorCusto,ValorVenda,observacao from produto ");
+                + " unidadeMedida_idUnidadeMedida, qtdAtual, qtdMinima, valorCusto, valorVenda, observacao from produto ");
         sql.append(" where id = ? ");
 
         try (ResultSet rs = Data.executeQuery(c, sql.toString(), id)) {
@@ -60,7 +60,7 @@ public class DAOProduto {
         StringBuilder sql = new StringBuilder();
         sql.append(" update produto ");
         sql.append(" set nomeProduto = ?, fornecedor_idFornecedor = ?, categoria_idCategoria = ?, unidadeMedida_idUnidadeMedida = ?, qtdAtual = ? ,"
-                + " qtdMinima = ?, valorCusto = ?, ValorVenda = ?, observacao = ? ");
+                + " qtdMinima = ?, valorCusto = ?, valorVenda = ?, observacao = ? ");
         sql.append(" where id = ? ");
 
         Data.executeUpdate(c, sql.toString(),           
@@ -71,7 +71,7 @@ public class DAOProduto {
     public static List<TOProduto> lista(Connection c, String filtro) throws Exception {
         StringBuilder sql = new StringBuilder();
         sql.append(" select id, nomeProduto, fornecedor_idFornecedor, categoria_idCategoria,"
-                + " unidadeMedida_idUnidadeMedida,qtdAtual,qtdMinima,valorCusto,ValorVenda,observacao from produto ");
+                + " unidadeMedida_idUnidadeMedida,qtdAtual,qtdMinima,valorCusto,valorVenda,observacao from produto ");
         sql.append(" order by nomeProduto ");
 
         List<TOProduto> l = new ArrayList<>();
@@ -85,21 +85,21 @@ public class DAOProduto {
     }
     
     
-     public static TOProduto obterUnidade(Connection c, int id) throws Exception {
-        StringBuilder sql = new StringBuilder();
-        sql.append(" select id, nomeUnidade from unidadeMedida ");
-        sql.append(" where id = ? ");
-
-        try (ResultSet rs = Data.executeQuery(c, sql.toString(), id)) {
-
-            if (rs.next()) {
-                return new TOProduto(rs);
-            } else {
-                return null;
-            }
-
-        }
-
-    }
+//     public static TOProduto obterUnidade(Connection c, int id) throws Exception {
+//        StringBuilder sql = new StringBuilder();
+//        sql.append(" select id, nomeUnidade from unidadeMedida ");
+//        sql.append(" where id = ? ");
+//
+//        try (ResultSet rs = Data.executeQuery(c, sql.toString(), id)) {
+//
+//            if (rs.next()) {
+//                return new TOProduto(rs);
+//            } else {
+//                return null;
+//            }
+//
+//        }
+//
+//    }
 
 }

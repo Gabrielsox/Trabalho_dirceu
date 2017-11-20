@@ -30,13 +30,15 @@ public class TOProduto {
         this.fornecedor_idFornecedor = rs.getInt("fornecedor_idFornecedor");
         this.categoria_idCategoria = rs.getInt("categoria_idCategoria");
         this.unidadeMedida_idUnidadeMedida = rs.getInt("unidadeMedida_idUnidadeMedida");
-        this.qtdAtual = rs.getInt("iqtdAtuald");
+        this.qtdAtual = rs.getInt("qtdAtual");
         this.qtdMinima = rs.getInt("qtdMinima");
         this.valorCusto = rs.getDouble("valorCusto");
         this.ValorVenda = rs.getDouble("ValorVenda");
         this.observacao = rs.getString("observacao");
 
     }
+    
+    public TOProduto(){}
 
     /**
      * @return the id
