@@ -42,23 +42,23 @@ public class ServiceProduto {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public TOProduto inserir(TOProduto cliente) throws Exception {
-        BOProduto.inserir(cliente);
-        return cliente;
+    public TOProduto inserir(TOProduto produto) throws Exception {
+        BOProduto.inserir(produto);
+        return produto;
     }
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-    public TOProduto alterar(TOProduto cliente) throws Exception {
+    public TOProduto alterar(TOProduto produto) throws Exception {
 
-        BOProduto.alterar(cliente);
+        BOProduto.alterar(produto);
 
-        return cliente;
+        return produto;
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<TOProduto> obterCliente() throws Exception {
+    public List<TOProduto> obterProduto() throws Exception {
         return BOProduto.lista("");
     }
 

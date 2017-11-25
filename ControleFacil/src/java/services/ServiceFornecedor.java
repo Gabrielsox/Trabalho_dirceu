@@ -43,28 +43,28 @@ public class ServiceFornecedor {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public TOFornecedor inserir(TOFornecedor cliente) throws Exception {
-        BOFornecedor.inserir(cliente);
-        return cliente;
+    public TOFornecedor inserir(TOFornecedor fornecedor) throws Exception {
+        BOFornecedor.inserir(fornecedor);
+        return fornecedor;
     }
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-    public TOFornecedor alterar(TOFornecedor cliente) throws Exception {
-        BOFornecedor.alterar(cliente);
-        return cliente;
+    public TOFornecedor alterar(TOFornecedor fornecedor) throws Exception {
+        BOFornecedor.alterar(fornecedor);
+        return fornecedor;
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<TOFornecedor> obterCliente() throws Exception {
+    public List<TOFornecedor> obterFornecedor() throws Exception {
         return BOFornecedor.lista("");
     }
 
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public TOFornecedor obterCliente(@PathParam("id") int id) throws Exception {
+    public TOFornecedor obterFornecedor(@PathParam("id") int id) throws Exception {
         return BOFornecedor.obter(id);
     }
 

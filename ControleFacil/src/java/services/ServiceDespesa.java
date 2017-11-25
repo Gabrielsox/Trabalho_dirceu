@@ -42,28 +42,28 @@ public class ServiceDespesa {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public TODespesa inserir(TODespesa cliente) throws Exception {
-        BODespesa.inserir(cliente);
-        return cliente;
+    public TODespesa inserir(TODespesa despesa) throws Exception {
+        BODespesa.inserir(despesa);
+        return despesa;
     }
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-    public TODespesa alterar(TODespesa cliente) throws Exception {
-        BODespesa.alterar(cliente);
-        return cliente;
+    public TODespesa alterar(TODespesa despesa) throws Exception {
+        BODespesa.alterar(despesa);
+        return despesa;
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<TODespesa> obterCliente() throws Exception {
+    public List<TODespesa> obterDespesa() throws Exception {
         return BODespesa.lista("");
     }
 
     @GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public TODespesa obterCliente(@PathParam("id") int id) throws Exception {
+    public TODespesa obterDespesa(@PathParam("id") int id) throws Exception {
         return BODespesa.obter(id);
     }
 

@@ -42,9 +42,9 @@ public class ServiceUnidade {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public TOUnidade inserir(TOUnidade cliente) throws Exception {
-        BOUnidade.inserir(cliente);
-        return cliente;
+    public TOUnidade inserir(TOUnidade unidade) throws Exception {
+        BOUnidade.inserir(unidade);
+        return unidade;
     }
 
     @PUT
