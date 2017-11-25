@@ -10,6 +10,31 @@ telefone varchar(20) not null,
 observacao varchar(100),
 constraint pk_cliente primary key (id)
 );
+insert into cliente values(1,"Comercio ltds","comercio@gmail.com","rua a bairro x","35866084","investidor");
+
+create table receber (
+id int auto_increment,
+id_cliente int not null,
+descricao varchar(100) not null,
+valor double not null,
+dataVencimento date not null,
+observacao varchar(100),
+constraint pk_receber primary key (id),
+FOREIGN KEY (id_cliente) REFERENCES cliente(id)
+);
+
+insert into receber values (1,1,"balas",50,now(),"cartão");
+
+create table despesa (
+id int auto_increment,
+descricao varchar(25) not null,
+dataDespesa date not null,
+valor double not null,
+observacao varchar(100),
+constraint pk_categoria primary key (id)
+);
+insert into despesa values(1,"balas",now(),100,"chocolate");
+
 
 create table fornecedor (
 id int auto_increment,
@@ -21,7 +46,7 @@ telefone varchar(20) not null,
 observacao varchar(100),
 constraint pk_cliente primary key (id)
 );
-
+insert into fornecedor values(1,"mercearia","3055029555","mercearia@gmail.com","rua a","658596542","preço em conta");
 
 create table categoria (
 id int auto_increment,
@@ -29,11 +54,15 @@ nomeCategoria varchar(25) not null,
 constraint pk_categoria primary key (id)
 );
 
+insert into categoria values(1,"Balas");
+
 create table unidadeMedida (
 id int auto_increment,
 nomeUnidade varchar(25) not null,
 constraint pk_categoria primary key (id)
 );
+
+insert into unidadeMedida values(1,"Unidade");
 
 create table produto (
 id int auto_increment,
@@ -52,71 +81,7 @@ FOREIGN KEY (categoria_idCategoria) REFERENCES categoria(id),
 FOREIGN KEY (unidadeMedida_idUnidadeMedida) REFERENCES unidadeMedida(id)
 
 );
-
-insert into produto values(1,"capacete",3,6,3,20,10,200,220,"azul tamanho 48");
-select * from produto;
-
-SELECT id, nomeProduto, nomeFornecedor , nomeCategoria c,nomeUnidade, qtdAtual, qtdMinima, valorCusto, ValorVenda, observacao 
-FROM produto p, fornecedor f, categoria c, unidadeMedida u
-WHERE p.id = f.id 
-and f.id = c.id
-and c.id = u.id
+insert into produto values(1,"Bala",1,1,1,200,50,0.05,0.10,"chocolate");
 
 
 
-
-
-
-
-
-
-
-create table despesa (
-id int auto_increment,
-descricao varchar(25) not null,
-dataDespesa date not null,
-valor double not null,
-observacao varchar(100),
-constraint pk_categoria primary key (id)
-);
-
-
-
-
-create table formaPagamento (
-id int auto_increment,
-nomeForma varchar(25) not null,
-observacao varchar(100),
-constraint pk_categoria primary key (id)
-);
-
-
-
-CREATE TABLE vendas (
-id int auto_increment,
-nomeCliente_idCliente int not null,
-dataVenda date not null,
-formaPagamento_idPagamento int not null,
-valorTotal double(10,2) not null default 0.00,
-constraint pk_vendas primary key (id),
-FOREIGN KEY (nomeCliente_idCliente) REFERENCES cliente(id),
-FOREIGN KEY (formaPagamento_idPagamento) REFERENCES formaPagamento(id)
-);
-
-CREATE TABLE itens (
-id int auto_increment,
-venda_idVendas int not null,
-produto_idProduto int not null,
-valor decimal(10,2) not null default 0.00,
-quantidade int not null,
-constraint pk_itens primary key (id),
-FOREIGN KEY (venda_idVendas) REFERENCES vendas(id),
-FOREIGN KEY (produto_idProduto) REFERENCES produto(id)
-
-);
-
-select id, nome, email, endereco, telefone,observacao from cliente
-order by nome;
-
-
-select * from cliente;
