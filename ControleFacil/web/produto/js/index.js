@@ -45,7 +45,7 @@ Index.prototype = {
                 this._obterSelectUnidadeError);
     },
     _obterSelectUnidadeSuccess: function (value) {
-
+        
 
         $('#unidadeMedida_idUnidadeMedida').html('');
         var select = '<option value"">selecione uma unidade</option>';
@@ -54,7 +54,7 @@ Index.prototype = {
 
         for (var i = 0; i < value.length; i++) {
 
-            select = '<option value="' + [i].id + '">' + value[i].nomeUnidade + '</option>';
+            select = '<option value="' + value[i].id + '">' + value[i].nomeUnidade + '</option>';
 
             $('#unidadeMedida_idUnidadeMedida').append(select);
 
@@ -85,7 +85,7 @@ Index.prototype = {
         for (var i = 0; i < value.length; i++) {
 
 
-            select = '<option value="' + [i].id + '">' + value[i].nomeCategoria + '</option>';
+            select = '<option value="' + value[i].id + '">' + value[i].nomeCategoria + '</option>';
 
             $('#categoria_idCategoria').append(select);
 
@@ -108,6 +108,7 @@ Index.prototype = {
 
     _obterSelectFornecedorSuccess: function (value) {
 
+debugger;
 
         $('#fornecedor_idFornecedor').html('');
         var select = '<option value"">selecione uma fornecedor</option>';
@@ -117,7 +118,7 @@ Index.prototype = {
         for (var i = 0; i < value.length; i++) {
 
 
-            select = '<option value="' + [i].id + '">' + value[i].nomeFornecedor + '</option>';
+            select = '<option value="' + value[i].id + '">' + value[i].nomeFornecedor + '</option>';
 
             $('#fornecedor_idFornecedor').append(select);
 
@@ -227,7 +228,7 @@ Index.prototype = {
         $('#nomeProduto').val(value.nomeProduto);
         $('#fornecedor_idFornecedor').val(value.fornecedor_idFornecedor);
         $('#categoria_idCategoria').val(value.categoria_idCategoria);
-        $('#selectUnidade').val(value.unidadeMedida_idUnidadeMedida);
+        $('#unidadeMedida_idUnidadeMedida').val(value.unidadeMedida_idUnidadeMedida);
         $('#qtdAtual').val(value.qtdAtual);
         $('#qtdMinima').val(value.qtdMinima);
         $('#valorCusto').val(value.valorCusto);
@@ -241,6 +242,8 @@ Index.prototype = {
 
     },
     _excluirClick: function (value) {
+
+
 
         this.dataBind(
                 'DELETE',
@@ -265,7 +268,7 @@ Index.prototype = {
             valorVenda: $('#valorVenda').val(),
             observacao: $('#observacao').val()
         };
-
+        
         // atenção que esta estrutura em javascript precisa respeitar a mesma estrutura
         // do modelo criado no java.
         // os valores que estão sendo passado via JQUERY $('#xxx') precisam ter o mesmo

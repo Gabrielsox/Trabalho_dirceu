@@ -84,22 +84,24 @@ public class DAOProduto {
         return l;
     }
     
-    
-//     public static TOProduto obterUnidade(Connection c, int id) throws Exception {
+//    public static List<TOProduto> lista(Connection c, String filtro) throws Exception {
 //        StringBuilder sql = new StringBuilder();
-//        sql.append(" select id, nomeUnidade from unidadeMedida ");
-//        sql.append(" where id = ? ");
+//        sql.append(" select a.id, a.nomeProduto, b.nomeFornecedor, c.nomeCategoria, d.nomeUnidade, a.qtdAtual,a.qtdMinima,a.valorCusto,valorVenda,a.observacao ");
+//        sql.append(" from produto as a ");
+//        sql.append(" inner join fornecedor as b on b.id = a.fornecedor_idFornecedor ");
+//        sql.append(" left join categoria as c on c.id =  a.fornecedor_idFornecedor ");
+//        sql.append(" left join unidadeMedida as d on d.id =  a.fornecedor_idFornecedor; "); 
+//        sql.append(" order by a.nomeProduto ");
 //
-//        try (ResultSet rs = Data.executeQuery(c, sql.toString(), id)) {
+//        List<TOProduto> l = new ArrayList<>();
 //
-//            if (rs.next()) {
-//                return new TOProduto(rs);
-//            } else {
-//                return null;
+//        try (ResultSet rs = Data.executeQuery(c, sql.toString())) {
+//            while (rs.next()) {
+//                l.add(new TOProduto(rs));
 //            }
-//
 //        }
-//
+//        return l;
 //    }
+
 
 }
