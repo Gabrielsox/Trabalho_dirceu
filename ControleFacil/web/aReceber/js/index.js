@@ -52,21 +52,6 @@ Index.prototype = {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     _obterUsuarios: function () {
         
         this.dataBind(
