@@ -21,15 +21,18 @@
     </head>
     <body>
         <%@include file= "../menu.jsp" %>
+        <div>
+            <h2> CATEGORIAS </h2>
+        </div>
         <section>
             <div id="conteudo-left">
-                <h3>Cadastro categoria</h3>
+                <h3>Cadastro</h3>
 
                 <input id="id" type="hidden"/>
 
                 Nome categotia<br/>
                 <input id="nomeCategoria" type="text"/><br/>
-               <br/>
+                <br/>
 
                 <input id="btnSalvar" type="button" value="Salvar"/>
             </div>

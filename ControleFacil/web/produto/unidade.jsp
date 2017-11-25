@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        
+
         <style>
             section{width:100%;height:100%;}
             #conteudo-left{width:20%;height:100%;float: left;}
@@ -22,6 +22,9 @@
     </head>
     <body>
         <%@include file= "../menu.jsp" %>
+        <div>
+            <h2> UNIDADE DE MEDIDA</h2>
+        </div>
         <section>
             <div id="conteudo-left">
                 <h3>Cadastro</h3>

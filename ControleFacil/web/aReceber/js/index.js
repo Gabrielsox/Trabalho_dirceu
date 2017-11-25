@@ -21,10 +21,6 @@ Index.prototype = {
        location.href = "/cliente/index.jsp";
     },
     
-    
-    
-    
-    
     _obterSelectCliente: function () {
 
         this.dataBind(

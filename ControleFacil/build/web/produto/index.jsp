@@ -22,9 +22,12 @@
     </head>
     <body>
         <%@include file= "../menu.jsp" %>
+        <div>
+            <h2> PRODUTOS</h2>
+        </div>
         <section>
             <div id="conteudo-left">
-                <h3>Cadastro Produto</h3>
+                <h3>Cadastro</h3>
 
                 <input id="id" type="hidden"/>
 
@@ -32,18 +35,18 @@
                 <input id="nomeProduto" type="text"/><br/>
                 Fornecedor<br/> 
                 <select id="fornecedor_idFornecedor" class="basic"> 
-                   
-                    
+
+
                 </select> <input id="btnNovoFornecedor" type="button" value="+"/><br/>
                 Categoria<br/>
                 <select id="categoria_idCategoria" class="basic">
-                   
-                    
+
+
                 </select> <input id="btnNovoCategoria" type="button" value="+"/><br/>
                 Unidade medida<br/>
                 <select id="unidadeMedida_idUnidadeMedida" class="basic">
-                    
-                    
+
+
                 </select> <input id="btnNovoUnidade" type="button" value="+"/><br/>
                 Quantidade atual <br/>
                 <input id="qtdAtual" type="text"/><br/>

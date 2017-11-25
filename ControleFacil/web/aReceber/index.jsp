@@ -23,6 +23,9 @@
     <body>
         <%@include file= "../menu.jsp" %>
         <section>
+            <div>
+                <h2> CONTAS A RECEBER</h2>
+            </div>
             <div id="conteudo-left">
                 <h3>Cadastro</h3>
 

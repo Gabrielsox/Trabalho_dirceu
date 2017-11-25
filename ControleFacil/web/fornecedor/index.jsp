@@ -21,10 +21,12 @@
     </head>
     <body>
         <%@include file= "../menu.jsp" %>
-        
+        <div>
+            <h2> FORNECEDORES</h2>
+        </div>
         <section>
             <div id="conteudo-left">
-                <h3>Cadastro fornecedor</h3>
+                <h3>Cadastro</h3>
 
                 <input id="id" type="hidden"/>
 
@@ -41,7 +43,7 @@
                 Observação<br/>
                 <input id="observacao" type="text"/><br/><br/>
 
-                               
+
                 <input id="btnSalvar" type="button" value="Salvar"/>
             </div>
             <div id="conteudo-right">
@@ -51,8 +53,8 @@
 
         </section>
 
-        
-        
-        
+
+
+
     </body>
 </html>
