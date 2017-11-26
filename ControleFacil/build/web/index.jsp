@@ -10,8 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style>
+            #texto{text-align: center}
+        </style>
     </head>
     <body>
         <%@include file= "menu.jsp" %>
+        
+        <h1 id="texto">SEJA BEM VINDO CONTROLE FÁCIL</h1>
     </body>
 </html>
